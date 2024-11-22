@@ -35,4 +35,23 @@ Route::resource('chirps', ChirpController::class)
 ->middleware(['auth']);
 
 
+Route::get('/time', function () {
+    $timezones = DateTimeZone::listIdentifiers();
+    dd($timezones);
+});
+
+
+Route::get('/get-my-php-info/{password}', function ($password) {
+    if( $password == "pleaseuseyoursecuredpasswordhere" )
+        return phpinfo();
+    else
+       abort(403, 'Unauthorized access');
+});
+
+
+Route::get('def', function(){
+    defer(function(){
+        \Log::info('logging!');
+    });
+});
 require __DIR__.'/auth.php';
