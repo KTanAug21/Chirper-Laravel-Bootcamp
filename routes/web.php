@@ -43,7 +43,7 @@ Route::get('/time', function () {
 
 Route::get('/get-my-php-info/{password}', function ($password) {
     if( $password == "pleaseuseyoursecuredpasswordhere" )
-        return phpinfo();
+        dd( phpinfo() );
     else
        abort(403, 'Unauthorized access');
 });
