@@ -48,6 +48,11 @@ Route::get('/get-my-php-info/{password}', function ($password) {
        abort(403, 'Unauthorized access');
 });
 
+Route::get('getmem',function(){
+    $memory_limit = ini_get('memory_limit');
+    dd( $memory_limit );
+});
+
 
 Route::get('def', function(){
     defer(function(){
