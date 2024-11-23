@@ -54,4 +54,10 @@ Route::get('def', function(){
         \Log::info('logging!');
     });
 });
+
+Route::get('dispatch',function(){
+    \Log::info('dispatching job...');
+    $job = new \App\Jobs\ProcessPodcast();
+    $job->dispatch();
+});
 require __DIR__.'/auth.php';
