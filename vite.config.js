@@ -17,6 +17,7 @@ export default defineConfig({
             },
         }),
     ],
+    base: 'https://test-kat.mooo.com',
     server: {
         https: true
     }
